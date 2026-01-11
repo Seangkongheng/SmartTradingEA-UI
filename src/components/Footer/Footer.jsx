@@ -29,8 +29,8 @@ const Footer = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://t.me/seangkongheng168"
-          className="text-blue-400 hover:text-blue-500 font-semibold"
+          href="https://t.me/ChhuyVannithDev"
+          className="text-[#BAFD00]  font-semibold"
         >
           Need help?
         </a>
