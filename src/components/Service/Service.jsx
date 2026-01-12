@@ -43,7 +43,7 @@ const Service = () => {
         variants={item}
         className="flex flex-col items-center justify-start px-4 mb-6 mt-12"
       >
-        <h1 className="text-center text-[hsl(72_100%_50%)] mb-5 font-bold text-5xl">
+        <h1 className="text-center text-[hsl(72_100%_50%)] mb-5 font-bold text-3xl ld:text-5xl md:text-5xl">
           Additional Service
         </h1>
         <p className="text-gray-400 mb-5">

@@ -1,15 +1,60 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const Marketplace = () => {
-   const navigate = useNavigate();
+const Product = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        damping: 20,
+        mass: 0.8,
+      },
+    },
+  };
   return (
-    <div className="marketplace-content grid grid-cols-1 md:grid-cols-3 gap-4 ">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <div className="mt-28 text-white max-w-6xl mx-auto px-4">
+        {/* Noted : Title */}
+        <motion.h1
+          variants={item}
+          className="text-center text-[#A8E900] text-3xl font-bold md:text-5xl"
+        >
+          Our Products
+        </motion.h1>
+        <motion.p
+          variants={item}
+          className="text-center text-gray-500 mb-10 mt-5"
+        >
+          Professional automation engineered for Gold volatility
+        </motion.p>
+      </div>
+
+      <div className="marketplace-content grid grid-cols-1 md:grid-cols-3 gap-4 ">
 
       {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-neutral-900 rounded-lg">
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111] rounded-lg">
         <div className="card-title">
-          <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
+          <h3 className="text-lg font-bold mb-2 text-white">Trading Robot</h3>
         </div>
         <div className="card-body">
           <p className="text-gray-500 line-clamp-2 mb-5">
@@ -23,8 +68,8 @@ const Marketplace = () => {
           <p className="text-sm text-gray-300 mb-5">Monothly</p>
 
           <div class="border-t pt-3">
-            <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-sm">
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2  text-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -126,10 +171,10 @@ const Marketplace = () => {
         </div>
       </div>
 
-       {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-neutral-900 rounded-lg">
+            {/* Noted : Card 1 */}
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111] rounded-lg">
         <div className="card-title">
-          <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
+          <h3 className="text-lg font-bold mb-2 text-white">Trading Robot</h3>
         </div>
         <div className="card-body">
           <p className="text-gray-500 line-clamp-2 mb-5">
@@ -143,8 +188,8 @@ const Marketplace = () => {
           <p className="text-sm text-gray-300 mb-5">Monothly</p>
 
           <div class="border-t pt-3">
-            <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-sm">
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2  text-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -245,11 +290,12 @@ const Marketplace = () => {
           </div>
         </div>
       </div>
-      
-       {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-neutral-900 rounded-lg">
+
+
+      {/* Noted : Card 1 */}
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111] rounded-lg">
         <div className="card-title">
-          <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
+          <h3 className="text-lg font-bold mb-2 text-white">Trading Robot</h3>
         </div>
         <div className="card-body">
           <p className="text-gray-500 line-clamp-2 mb-5">
@@ -263,8 +309,8 @@ const Marketplace = () => {
           <p className="text-sm text-gray-300 mb-5">Monothly</p>
 
           <div class="border-t pt-3">
-            <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-sm">
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2  text-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -365,9 +411,12 @@ const Marketplace = () => {
           </div>
         </div>
       </div>
-      
+
+
+
     </div>
+    </motion.div>
   );
 };
 
-export default Marketplace;
+export default Product;
