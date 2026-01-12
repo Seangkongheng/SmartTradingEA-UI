@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import AnimatedBackground from "../Service/AnimatedBackground"; // optional
+import AnimatedBackground from "../Service/AnimatedBackground"; // optional
 
 const container = {
   hidden: { opacity: 0 },
@@ -33,15 +33,15 @@ const Home = () => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="home w-full min-h-screen flex justify-center items-center px-4 sm:px-6"
+      className="home w-full min-h-screen flex justify-center items-center px-7 sm:px-6"
     >
-      {/* <AnimatedBackground /> */}
+      <AnimatedBackground />
 
-      <div className="text-center max-w-5xl mx-auto">
+      <div className="text-center mt-16 max-w-5xl mx-auto">
 
         {/* Title */}
         <motion.div variants={item} className="home-title">
-          <h1 className="mb-6 text-[#A8E900] text-2xl sm:text-6xl font-bold">
+          <h1 className="mb-6 text-[#A8E900] text-3xl sm:text-6xl font-bold text-center">
             Engineered for Gold Volatility
           </h1>
           <h2 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 max-w-md sm:max-w-3xl mx-auto">
@@ -64,9 +64,9 @@ const Home = () => {
         >
           <a
             href="#"
-            className="group flex justify-center items-center w-full sm:w-auto px-6 py-2 bg-[#A8E900] text-black rounded-md transition shadow-[0_0_20px_rgba(168,233,0,0.45)] hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
+            className="group flex justify-center items-center w-full sm:w-auto px-6 py-2 bg-[#A8E900] text-black rounded-md transition hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
           >
-            View Pricing
+            BUY NOW
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -90,14 +90,7 @@ const Home = () => {
           </a>
         </motion.div>
 
-        {/* Features */}
-        <motion.div variants={item} className="service-active text-center mt-6">
-          <ul className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-12 text-sm text-gray-400">
-            <li className="flex gap-1">⭐ 50+ Active Trading Plans</li>
-            <li className="flex gap-1">✔ Real-time Data</li>
-            <li className="flex gap-1">🔒 Bank-level Security</li>
-          </ul>
-        </motion.div>
+        
       </div>
     </motion.div>
   );

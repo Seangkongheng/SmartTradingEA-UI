@@ -51,7 +51,7 @@ const Navbar = () => {
                 animate={{ rotate: [-10, 10, -10] }}
                 transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
               />
-              <h1 className="text-[#A0EA01] text-2xl font-bold">
+              <h1 className="text-white text-2xl font-bold">
                 <Link to="/">SmartTradingEA 🤖</Link>
               </h1>
             </div>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.path}
-                    className="text-gray-300 hover:text-[#BAFD00]"
+                    className="text-green-500 uppercase hover:text-[#BAFD00]"
                   >
                     {item.name}
                   </Link>
@@ -125,7 +125,7 @@ const Navbar = () => {
                   key={i}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block rounded-lg px-4 py-3 text-gray-300
+                  className="block uppercase rounded-lg px-4 py-3 text-gray-300
                   hover:text-[#BAFD00] hover:bg-white/5 transition"
                 >
                   {item.name}

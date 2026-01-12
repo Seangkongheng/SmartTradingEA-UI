@@ -49,8 +49,9 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-gray-500   sm:text-base text-sm">
-              Professional automation engineered for Gold volatility. Trade
-              XAUUSD without choosing a direction.
+              SmartTradingEA is a professional Expert Advisor built for Gold
+              (XAUUSD), designed to handle volatility with intelligent risk
+              control, adaptive trade spacing, and real-time execution.
             </p>
           </div>
 
