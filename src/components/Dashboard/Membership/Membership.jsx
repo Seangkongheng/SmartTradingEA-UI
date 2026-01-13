@@ -81,7 +81,7 @@ const Membership = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center">
-      <div className="bg-neutral-900 border-[#BAFD00] border w-[600px] p-6 rounded-lg shadow-lg">
+      <div className="bg-[#111]  border-[#BAFD00] border w-[600px] p-6 rounded-lg shadow-lg">
         <h3 className="text-xl font-bold mb-2 text-white">
           Membership Referral
         </h3>

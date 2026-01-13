@@ -7,7 +7,7 @@ const Marketplace = () => {
     <div className="marketplace-content grid grid-cols-1 md:grid-cols-3 gap-4 ">
 
       {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-neutral-900 rounded-lg">
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111]  rounded-lg">
         <div className="card-title">
           <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
         </div>
@@ -127,7 +127,7 @@ const Marketplace = () => {
       </div>
 
        {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-neutral-900 rounded-lg">
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111]  rounded-lg">
         <div className="card-title">
           <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
         </div>
@@ -247,7 +247,7 @@ const Marketplace = () => {
       </div>
       
        {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-neutral-900 rounded-lg">
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111]  rounded-lg">
         <div className="card-title">
           <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
         </div>

@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="footer-column flex flex-col items-start">
             <div className="flex items-center justify-center mb-4 gap-2">
               <img src={logo} className="h-10" alt="" />
-              <h3 className="text-[#A0EA01] font-bold text-lg sm:text-xl mb-2">
+              <h3 className="text-white font-bold text-lg sm:text-xl mb-2">
                 SmartTradingEA 🤖
               </h3>
             </div>

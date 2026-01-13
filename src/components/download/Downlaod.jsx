@@ -43,7 +43,7 @@ const Download = () => {
           variants={item}
           className="text-center text-[#A8E900] text-3xl font-bold md:text-5xl"
         >
-          All File Downlaod
+          All Files Downlaod
         </motion.h1>
         <motion.p
           variants={item}

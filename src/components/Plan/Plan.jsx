@@ -9,7 +9,7 @@ const Plan = () => {
 
   return (
     <div className="max-w-5xl mx-auto p-6">
-      <h1 className="text-center md:text-5xl text-[hsl(72_100%_50%)] font-bold text-3xl">
+      <h1 className="text-center md:text-5xl text-[hsl(59,100%,50%)] font-bold text-3xl">
         Choose Your License Plan
       </h1>
       <p className="text-center text-gray-500 mb-10 mt-5">
@@ -100,13 +100,13 @@ const Plan = () => {
           </div>
 
           <ul>
-            <h1 className="mb-5 text-5xl font-bold text-[#BAFD00] ">
+            <h1 className="mb-5 text-5xl font-bold text-[hsl(59,100%,50%)] ">
               $20<span className="text-lg text-gray-500">/month</span>
             </h1>
 
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -126,7 +126,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -146,7 +146,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -166,7 +166,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -186,7 +186,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-2">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -206,7 +206,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-2">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -306,13 +306,13 @@ const Plan = () => {
           </div>
 
           <ul>
-            <h1 className="mb-5 text-5xl font-bold text-[#BAFD00] ">
+            <h1 className="mb-5 text-5xl font-bold text-[hsl(59,100%,50%)] ">
               $200<span className="text-lg text-gray-500">/year</span>
             </h1>
 
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)] flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -332,7 +332,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)] flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -352,7 +352,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)] flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -372,7 +372,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-3">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)] flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -392,7 +392,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-2">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -412,7 +412,7 @@ const Plan = () => {
             </li>
             <li className="flex items-center  text-gray-400 gap-2 mb-2">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -432,7 +432,7 @@ const Plan = () => {
             </li>
               <li className="flex items-center  text-gray-400 gap-2 mb-2">
               {" "}
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#BAFD00] to-[#A8E900] flex items-center justify-center flex-shrink-0">
+              <div class="w-5 h-5 rounded-full bg-[hsl(59,100%,50%)]  flex items-center justify-center flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

@@ -117,52 +117,31 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="text-white mt-32 px-4">
-      {/* Header Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-        <div className="h-32 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center">
-          Card 1
-        </div>
-        <div className="h-32 rounded-lg bg-gradient-to-r from-sky-500 to-blue-700 flex items-center justify-center">
-          Card 2
-        </div>
-        <div className="h-32 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center">
-          Card 3
-        </div>
-        <div className="h-32 rounded-lg bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center">
-          Card 4
+    <div className="text-white mt-24 px-4">
+      {/* Tabs */}
+      <div className="relative mb-6 border-b border-neutral-800">
+        <div className="flex space-x-2 overflow-x-auto overflow-y-hidden scrollbar-hide">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`relative flex items-center gap-2 px-5 py-3 font-medium transition-all whitespace-nowrap
+            ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
+              >
+                {tab.icon}
+                {tab.label}
+
+                {isActive && (
+                  <span className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#BAFD00] rounded-full" />
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
-
-    {/* Tabs */}
-<div className="relative mb-6 border-b border-neutral-800">
-  <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
-    {tabs.map((tab) => {
-      const isActive = activeTab === tab.id;
-
-      return (
-        <button
-          key={tab.id}
-          onClick={() => setActiveTab(tab.id)}
-          className={`relative flex items-center gap-2 px-5 py-3 font-medium transition-all whitespace-nowrap
-            ${
-              isActive
-                ? "text-white"
-                : "text-gray-400 hover:text-white"
-            }`}
-        >
-          {tab.icon}
-          {tab.label}
-
-          {isActive && (
-            <span className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#BAFD00] rounded-full" />
-          )}
-        </button>
-      );
-    })}
-  </div>
-</div>
-
 
       {/* Tab Content */}
       <div>

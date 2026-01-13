@@ -38,12 +38,12 @@ const Home = () => {
       <AnimatedBackground />
 
       <div className="text-center mt-16 max-w-5xl mx-auto">
-
         {/* Title */}
         <motion.div variants={item} className="home-title">
-          <h1 className="mb-6 text-[#A8E900] text-3xl sm:text-6xl font-bold text-center">
+          <h1 className="mb-6 text-[hsl(59,100%,50%)] text-3xl sm:text-6xl font-bold text-center">
             Engineered for Gold Volatility
           </h1>
+
           <h2 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 max-w-md sm:max-w-3xl mx-auto">
             Trade XAUUSD Without Choosing a Direction
           </h2>
@@ -64,7 +64,7 @@ const Home = () => {
         >
           <a
             href="#"
-            className="group flex justify-center items-center w-full sm:w-auto px-6 py-2 bg-[#A8E900] text-black rounded-md transition hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
+            className="group flex justify-center items-center w-full sm:w-auto px-6 py-2 bg-[hsl(59,100%,50%)] text-black rounded-md transition hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
           >
             BUY NOW
             <svg
@@ -84,13 +84,11 @@ const Home = () => {
 
           <a
             href="#"
-            className="flex justify-center items-center w-full sm:w-auto px-10 py-2 bg-gray-800 text-[#A8E900] font-bold border-2 border-[#A8E900] rounded-md transition hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
+            className="flex justify-center items-center w-full sm:w-auto px-10 py-2 bg-gray-800 text-[hsl(59,100%,50%)] font-bold border-2 border-[hsl(59,100%,50%)] rounded-md transition hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
           >
             Get Started Free
           </a>
         </motion.div>
-
-        
       </div>
     </motion.div>
   );

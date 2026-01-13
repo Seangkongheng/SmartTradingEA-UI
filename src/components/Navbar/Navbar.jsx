@@ -91,7 +91,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-5 py-2 bg-[#A8E900] text-black rounded-md shadow-[0_0_20px_rgba(168,233,0,0.45)]
+                className="px-5 py-2 bg-[hsl(59,100%,50%)] text-black rounded-md shadow-[0_0_20px_rgba(168,233,0,0.45)]
                 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] transition text-sm"
               >
                 Sign in

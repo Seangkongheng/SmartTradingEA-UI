@@ -47,7 +47,7 @@ const Feature = () => {
       {/* Title */}
       <motion.h1
         variants={item}
-        className="text-center text-[#A8E900] text-3xl font-bold md:text-5xl"
+        className="text-center text-[hsl(59,100%,50%)]  text-3xl font-bold md:text-5xl"
       >
         Expert Advisor Features
       </motion.h1>
