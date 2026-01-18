@@ -42,12 +42,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:grid-cols-3 py-12 lg:grid-cols-3 border-t border-b border-gray-800 text-white">
           {/* Column 1 - Logo & Description */}
           <div className="footer-column flex flex-col items-start">
-            <div className="flex items-center justify-center mb-4 gap-2">
+            <div className="flex items-center justify-center gap-2 mb-4">
               <img src={logo} className="h-10" alt="" />
-              <h3 className="text-white font-medium text-lg sm:text-xl mb-2">
+              <h3 className="text-white font-medium text-lg sm:text-xl">
                 SmartTradingEA 🤖
               </h3>
             </div>
+
             <p className="text-gray-500   sm:text-base text-sm">
               SmartTradingEA is a professional Expert Advisor built for Gold
               (XAUUSD), designed to handle volatility with intelligent risk
@@ -55,7 +56,6 @@ const Footer = () => {
             </p>
           </div>
 
-         
           {/* Column 3 - Community */}
           <div className="footer-column text-gray-200x">
             <h3 className="font-bold mb-4 text-lg sm:text-xl">Community</h3>
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-           {/* Column 2 - Quick Links */}
+          {/* Column 2 - Quick Links */}
           <div className="footer-column text-gray-200">
             <h3 className=" font-bold mb-4 text-lg sm:text-xl">Quick Links</h3>
             <ul className="text-gray-500  space-y-2 text-sm sm:text-base">
@@ -81,7 +81,6 @@ const Footer = () => {
               <li className="hover:text-white cursor-pointer">Pricing</li>
             </ul>
           </div>
-
         </div>
 
         {/* Footer Bottom */}

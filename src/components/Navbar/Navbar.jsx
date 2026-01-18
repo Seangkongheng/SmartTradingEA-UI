@@ -152,7 +152,7 @@ const Navbar = () => {
                   ease: "easeInOut",
                 }}
               />
-              <h1 className="text-white text-2xl font-bold">
+              <h1 className="text-white text-2xl font-semibold">
                 <Link to="/">SmartTradingEA 🤖</Link>
               </h1>
             </div>
@@ -173,7 +173,7 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.path}
-                    className="text-white uppercase hover:text-[hsl(59,100%,50%)]"
+                    className="text-white text-md uppercase hover:text-[hsl(59,100%,50%)]"
                   >
                     {item.name}
                   </Link>
