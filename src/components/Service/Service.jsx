@@ -43,7 +43,10 @@ const Service = () => {
         variants={item}
         className="flex flex-col items-center justify-start px-4 mb-6 mt-12"
       >
-        <h1 className="text-center text-[hsl(59,100%,50%)]  mb-5 font-bold text-3xl ld:text-5xl md:text-5xl">
+        <h1
+          className="text-center bg-gradient-to-r from-[#FFD700] via-[#BAFD00] to-[#9EFF00]
+             bg-clip-text text-transparent  mb-5 font-bold text-3xl ld:text-5xl md:text-5xl"
+        >
           Additional Service
         </h1>
         <p className="text-gray-400 mb-5">

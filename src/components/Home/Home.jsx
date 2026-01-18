@@ -40,13 +40,17 @@ const Home = () => {
       <div className="text-center mt-16 max-w-5xl mx-auto">
         {/* Title */}
         <motion.div variants={item} className="home-title">
-          <h1 className="mb-6 text-[hsl(59,100%,50%)] text-3xl sm:text-6xl font-bold text-center">
+          <h1
+            className="mb-6  bg-gradient-to-r from-[#FFD700] via-[#BAFD00] to-[#9EFF00]
+                   bg-clip-text text-transparent text-3xl sm:text-6xl font-bold text-center"
+          >
             Engineered for Gold Volatility
           </h1>
 
           <h2 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 max-w-md sm:max-w-3xl mx-auto">
             Trade XAUUSD Without Choosing a Direction
           </h2>
+          
         </motion.div>
 
         {/* Description */}

@@ -31,7 +31,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://t.me/ChhuyVannithDev"
-          className="text-[#A0EA01] md:text-[10px] text-sm font-semibold"
+          className="text-white md:text-[10px] text-sm font-semibold"
         >
           Need help?
         </a>
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="footer-column flex flex-col items-start">
             <div className="flex items-center justify-center mb-4 gap-2">
               <img src={logo} className="h-10" alt="" />
-              <h3 className="text-white font-bold text-lg sm:text-xl mb-2">
+              <h3 className="text-white font-medium text-lg sm:text-xl mb-2">
                 SmartTradingEA 🤖
               </h3>
             </div>
@@ -55,16 +55,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2 - Quick Links */}
-          <div className="footer-column text-gray-200">
-            <h3 className=" font-bold mb-4 text-lg sm:text-xl">Quick Links</h3>
-            <ul className="text-gray-500  space-y-2 text-sm sm:text-base">
-              <li className="hover:text-white cursor-pointer">Features</li>
-              <li className="hover:text-white cursor-pointer">Pricing</li>
-              <li className="hover:text-white cursor-pointer">Dashboard</li>
-            </ul>
-          </div>
-
+         
           {/* Column 3 - Community */}
           <div className="footer-column text-gray-200x">
             <h3 className="font-bold mb-4 text-lg sm:text-xl">Community</h3>
@@ -82,6 +73,15 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+           {/* Column 2 - Quick Links */}
+          <div className="footer-column text-gray-200">
+            <h3 className=" font-bold mb-4 text-lg sm:text-xl">Quick Links</h3>
+            <ul className="text-gray-500  space-y-2 text-sm sm:text-base">
+              <li className="hover:text-white cursor-pointer">Features</li>
+              <li className="hover:text-white cursor-pointer">Pricing</li>
+            </ul>
+          </div>
+
         </div>
 
         {/* Footer Bottom */}

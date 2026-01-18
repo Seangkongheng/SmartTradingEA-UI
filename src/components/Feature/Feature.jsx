@@ -47,10 +47,13 @@ const Feature = () => {
       {/* Title */}
       <motion.h1
         variants={item}
-        className="text-center text-[hsl(59,100%,50%)]  text-3xl font-bold md:text-5xl"
+        className="text-center text-3xl font-bold md:text-5xl
+             bg-gradient-to-r from-[#FFD700] via-[#BAFD00] to-[#9EFF00]
+             bg-clip-text text-transparent"
       >
         Expert Advisor Features
       </motion.h1>
+
       <motion.p
         variants={item}
         className="text-center text-gray-500 mb-10 mt-5"
@@ -346,7 +349,6 @@ const Feature = () => {
                 sizing manages drawdowns — not random averaging.
               </p>
             </div>
-
           </div>
         </div>
       </motion.div>
@@ -607,9 +609,7 @@ const Feature = () => {
           </div>
 
           <div className="mt-4 text-start">
-            <h1 className="text-white text-xl font-bold">
-              Dual-Hedged Engine
-            </h1>
+            <h1 className="text-white text-xl font-bold">Dual-Hedged Engine</h1>
             <p className="text-gray-500 text-sm mt-1">
               Opens both buy and sell positions on every M1 candle for
               direction-neutral trading.
@@ -680,9 +680,7 @@ const Feature = () => {
           </div>
 
           <div className="mt-4 text-start">
-            <h1 className="text-white text-xl font-bold">
-              Configurable Risk
-            </h1>
+            <h1 className="text-white text-xl font-bold">Configurable Risk</h1>
             <p className="text-gray-500 text-sm mt-1">
               Adjust risk parameters for any account size. Works from $50 / 5000
               cents upward.
@@ -690,7 +688,6 @@ const Feature = () => {
           </div>
         </div>
       </div>
-
     </motion.div>
   );
 };
