@@ -19,7 +19,7 @@ import VerifyLogin from "./components/VerifyLogin/VerifyLogin";
 function App() {
   return (
     <Router>
-      <div className="App  min-h-screen  bg-gradient-to-br from-[#070C0F] via-[#0A1219] to-[#070C0F] overflow-hidden relative">
+      <div className="App  min-h-screen font-Kantumruy bg-gradient-to-br from-[#070C0F] via-[#0A1219] to-[#070C0F] overflow-hidden relative">
         
         {/* Navbar always visible */}
         <Navbar />
