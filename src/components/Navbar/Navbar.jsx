@@ -42,55 +42,56 @@ const Navbar = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  setError({});
-  setSuccess("");
-  setLoading(true);
+    setError({});
+    setSuccess("");
+    setLoading(true);
 
-  try {
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}register`,
-      {
-        first_name: form.first_name,
-        last_name: form.last_name,
-        email: form.email,
-        password: form.password,
-        password_confirmation: form.password_confirmation,
-      },
-      {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}register`,
+        {
+          first_name: form.first_name,
+          last_name: form.last_name,
+          email: form.email,
+          password: form.password,
+          password_confirmation: form.password_confirmation,
+          captcha: captchaToken,
         },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        },
+      );
+
+      setSuccess(res.data.message);
+
+      setForm({
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      });
+
+      setIsSignUp(false);
+      setCaptchaToken(""); // reset captcha token if needed
+    } catch (err) {
+      console.error("REGISTER ERROR:", err.response || err);
+
+      if (err.response?.status === 422) {
+        setError(err.response.data.errors);
+      } else if (err.response?.status === 500) {
+        alert("Server error. Please try again later.");
       }
-    );
-
-    setSuccess(res.data.message);
-
-    setForm({
-      first_name: "",
-      last_name: "",
-      email: "",
-      password: "",
-      password_confirmation: "",
-    });
-
-    setIsSignUp(false);
-  } catch (err) {
-    console.error("REGISTER ERROR:", err.response || err);
-
-    if (err.response?.status === 422) {
-      setError(err.response.data.errors);
-    } else if (err.response?.status === 500) {
-      alert("Server error. Please try again later.");
+    } finally {
+      setLoading(false);
     }
-  } finally {
-    setLoading(false);
-  }
-};
-
+  };
 
   // Noted : Start Login
   const handleLogin = async (e) => {
