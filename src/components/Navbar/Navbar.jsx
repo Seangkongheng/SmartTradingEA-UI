@@ -59,6 +59,11 @@ const Navbar = () => {
         captcha: captchaToken, // include Turnstile token
       });
 
+      //  const res = await axios.post(`${import.meta.env.VITE_API_URL}register`, {
+      //   ...form, // include Turnstile token
+      // });
+
+
       setSuccess(res.data.message);
 
       // Reset form
@@ -232,9 +237,7 @@ const Navbar = () => {
                   setIsModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="w-full mt-2 py-3 bg-[#A8E900] text-black rounded-md
-                shadow-[0_0_20px_rgba(168,233,0,0.45)]
-                hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] transition"
+                className="w-full mt-2 py-3 bg-[#A8E900] text-black rounded-md transition"
               >
                 Sign in
               </button>
