@@ -117,7 +117,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="text-white mt-24 px-4">
+    <div className="text-white mt-5 px-4">
       {/* Tabs */}
       <div className="relative mb-6 border-b border-neutral-800">
         <div className="flex space-x-2 overflow-x-auto overflow-y-hidden scrollbar-hide">
@@ -135,7 +135,7 @@ const Dashboard = () => {
                 {tab.label}
 
                 {isActive && (
-                  <span className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#BAFD00] rounded-full" />
+                  <span className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[hsl(59,100%,50%)]  rounded-full" />
                 )}
               </button>
             );

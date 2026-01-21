@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const OrderDetail = () => {
   const navigate = useNavigate();
   return (
-    <div className="order-detail mt-20">
+    <div className="order-detail mt-5 px-5">
       <div className="order-detail-content  mx-auto p-6 bg-neutral-900 rounded-xl shadow-sm">
         <div className="flex items-center text-[#A8E900] hover:underline cursor-pointer py-2">
           <svg
@@ -170,7 +170,7 @@ const OrderDetail = () => {
               className="w-full p-2 rounded-lg bg-neutral-900 focus:ring-2 border focus:ring-amber-100 "
               placeholder="Enter the bank account holder name (e.g. JOHN DOE)"
             />
-            <button className="mt-4 w-full mb-5 rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition shadow-[0_0_20px_rgba(168,233,0,0.45)] hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] focus:ring-primary focus:ring-offset-2">
+            <button className="mt-4 w-full mb-5 rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition  hover:brightness-110  focus:ring-primary focus:ring-offset-2">
               Summit Order
             </button>
             <p className="text-center text-sm text-gray-400">

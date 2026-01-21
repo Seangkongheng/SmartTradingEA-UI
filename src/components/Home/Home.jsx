@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AnimatedBackground from "../Service/AnimatedBackground"; // optional
+import { useAuthModal } from "../../context/AuthModalContext";
 
 const container = {
   hidden: { opacity: 0 },
@@ -28,6 +29,8 @@ const item = {
 };
 
 const Home = () => {
+    const { openLogin } = useAuthModal();
+
   return (
     <motion.div
       variants={container}
@@ -86,12 +89,12 @@ const Home = () => {
             </svg>
           </a>
 
-          <a
+          <button onClick={openLogin}
             href="#"
-            className="flex justify-center items-center w-full sm:w-auto px-10 py-2 bg-gray-800 text-[hsl(59,100%,50%)] font-bold border-2 border-[hsl(59,100%,50%)] rounded-md transition hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)]"
+            className="flex justify-center items-center w-full sm:w-auto px-10 py-2 bg-gray-800 text-[hsl(59,100%,50%)] font-bold border-2 border-[hsl(59,100%,50%)] rounded-md transition hover:brightness-110"
           >
             Get Started Free
-          </a>
+          </button>
         </motion.div>
       </div>
     </motion.div>

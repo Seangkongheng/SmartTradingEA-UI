@@ -7,7 +7,7 @@ const Marketplace = () => {
     <div className="marketplace-content grid grid-cols-1 md:grid-cols-3 gap-4 ">
 
       {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111]  rounded-lg">
+      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[hsl(59,100%,50%)]  cursor-pointer p-6 bg-[#111]  rounded-lg">
         <div className="card-title">
           <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
         </div>
@@ -119,7 +119,7 @@ const Marketplace = () => {
               </li>
             </ul>
 
-            <button onClick={() => navigate("/order")} class="mt-4 w-full  rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition shadow-[0_0_20px_rgba(168,233,0,0.45)] hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] focus:ring-primary focus:ring-offset-2">
+            <button onClick={() => navigate("/order")} class="mt-4 w-full  rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition  hover:brightness-110  focus:ring-primary focus:ring-offset-2">
               View Details & Order
             </button>
           </div>
@@ -127,7 +127,7 @@ const Marketplace = () => {
       </div>
 
        {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111]  rounded-lg">
+        <div className="content-card flex flex-col  border border-neutral-700 hover:border-[hsl(59,100%,50%)]  cursor-pointer p-6 bg-[#111]  rounded-lg">
         <div className="card-title">
           <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
         </div>
@@ -239,7 +239,7 @@ const Marketplace = () => {
               </li>
             </ul>
 
-            <button onClick={() => navigate("/order")} class="mt-4 w-full  rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition shadow-[0_0_20px_rgba(168,233,0,0.45)] hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] focus:ring-primary focus:ring-offset-2">
+            <button onClick={() => navigate("/order")} class="mt-4 w-full  rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition  hover:brightness-110  focus:ring-primary focus:ring-offset-2">
               View Details & Order
             </button>
           </div>
@@ -247,7 +247,7 @@ const Marketplace = () => {
       </div>
       
        {/* Noted : Card 1 */}
-      <div className="content-card flex flex-col  border border-neutral-700 hover:border-[#BAFD00] cursor-pointer p-6 bg-[#111]  rounded-lg">
+        <div className="content-card flex flex-col  border border-neutral-700 hover:border-[hsl(59,100%,50%)]  cursor-pointer p-6 bg-[#111]  rounded-lg">
         <div className="card-title">
           <h3 className="text-lg font-bold mb-2">Trading Robot</h3>
         </div>
@@ -359,7 +359,7 @@ const Marketplace = () => {
               </li>
             </ul>
 
-            <button onClick={() => navigate("/order")} class="mt-4 w-full  rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition shadow-[0_0_20px_rgba(168,233,0,0.45)] hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] focus:ring-primary focus:ring-offset-2">
+            <button onClick={() => navigate("/order")} class="mt-4 w-full  rounded-md  px-4 py-2 text-sm bg-[#A8E900]  text-black/70 font-bold text-primary-foreground  focus:outline-none focus:ring-2  text-black  transition  hover:brightness-110  focus:ring-primary focus:ring-offset-2">
               View Details & Order
             </button>
           </div>

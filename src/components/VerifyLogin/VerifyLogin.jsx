@@ -1,65 +1,65 @@
-import { useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 export default function VerifyLogin() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
-  const token = params.get("token");
+  const [status, setStatus] = useState("verifying"); // "verifying" | "success" | "failed"
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  useEffect(() => {
+    const verifyLogin = async () => {
+      const token = params.get("token");
+      const user = params.get("user");
 
-  const handleVerify = async () => {
-    if (!token) {
-      setError("Invalid verification token");
-      return;
-    }
+      if (!token || !user) {
+        setStatus("failed");
+        return navigate("/verify-failed");
+      }
 
-    setLoading(true);
-    setError("");
+      try {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}verify-login`, {
+          token,
+          user,
+        });
 
-    try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/verify-login`,
-        { params: { token } }
-      );
+        // Save JWT token
+        localStorage.setItem("token", res.data.access_token);
 
-      // Save auth token (JWT / Sanctum)
-      localStorage.setItem("token", res.data.access_token);
-      navigate("/dashboard");
+        setStatus("success");
+        navigate("/verify-success");
+      } catch (err) {
+        console.error("VERIFY ERROR:", err.response?.data || err);
+        setStatus("failed");
+        navigate("/verify-failed");
+      }
+    };
 
-    } catch (err) {
-      setError(
-        err.response?.data?.message || "Verification failed or expired"
-      );
-    } finally {
-      setLoading(false);
+    verifyLogin();
+  }, [params, navigate]);
+
+  // Optional: display different messages based on status
+  const getMessage = () => {
+    switch (status) {
+      case "verifying":
+        return "⏳ Verifying your login...";
+      case "success":
+        return "✅ Login verified successfully!";
+      case "failed":
+        return "❌ Verification failed. Link may be expired or invalid.";
+      default:
+        return "";
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#070C0F] text-white">
-      <div className="bg-black/40 p-8 rounded-xl w-full max-w-md text-center">
-        <h1 className="text-2xl font-bold mb-4">Verify Login</h1>
-
-        <p className="text-gray-400 mb-6">
-          Click heng the button below to verify your login.
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4">{getMessage()}</h1>
+      {status === "verifying" && (
+        <p className="text-gray-300">
+          Please wait while we verify your login. You will be redirected shortly.
         </p>
-
-        {error && (
-          <p className="text-red-500 text-sm mb-4">{error}</p>
-        )}
-
-        <button
-          onClick={handleVerify}
-          disabled={loading}
-          className="w-full py-2 bg-[#A8E900] text-black rounded-lg font-medium
-          hover:brightness-110 transition disabled:opacity-60"
-        >
-          {loading ? "Verifying..." : "Verify Login"}
-        </button>
-      </div>
+      )}
     </div>
   );
 }

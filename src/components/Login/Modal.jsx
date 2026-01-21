@@ -23,7 +23,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             {/* Header */}
             <div className="flex justify-between items-center mb-4">
               <h2 className=" text-2xl font-semibold text-white  dark:text-white">
-                 Sign In
+                 Sign Ins
               </h2>
               <button
                 onClick={onClose}

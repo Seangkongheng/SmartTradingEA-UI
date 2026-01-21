@@ -36,12 +36,12 @@ const Download = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mt-28 text-white max-w-6xl mx-auto px-4">
+      <div className="mt-16 text-white max-w-6xl mx-auto px-4">
 
         {/* Noted : Title */}
         <motion.h1
           variants={item}
-          className="text-center text-[#A8E900] text-3xl font-bold md:text-5xl"
+          className="text-center py-5 text-[#A8E900] text-3xl font-bold md:text-5xl"
         >
           All Files Downlaod
         </motion.h1>

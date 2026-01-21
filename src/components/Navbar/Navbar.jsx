@@ -48,22 +48,20 @@ const Navbar = () => {
     //   alert("Please verify captcha first!");
     //   return;
     // }
+
     setError([]);
     setSuccess("");
-
     setLoading(true);
 
     try {
-      // const res = await axios.post("http://127.0.0.1:8000/api/register", {
-      //   ...form,
-      //   captcha: captchaToken, // include Turnstile token
-      // });
-
-      const res = await axios.post("http://127.0.0.1:8000/api/register", {
-        ...form, // spread form fields directly
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/register`, {
+        ...form,
+        captcha: captchaToken, // include Turnstile token
       });
 
       setSuccess(res.data.message);
+
+      // Reset form
       setForm({
         first_name: "",
         last_name: "",
@@ -75,22 +73,23 @@ const Navbar = () => {
       setIsSignUp(false);
     } catch (err) {
       if (err.response?.status === 422) {
-        setError(err.response.data.errors);
+        setError(err.response.data.errors); // validation errors
       } else {
-        console.error(err);
+        console.error(err); // other errors
       }
     } finally {
       setLoading(false);
     }
   };
 
+  // Noted : Start Login
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError({});
     setSuccess("");
-    try {
 
+    try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}user/login`,
         {
@@ -99,16 +98,14 @@ const Navbar = () => {
         },
       );
 
-      localStorage.setItem("token", res.data.access_token);
       setSuccess(res.data.message);
-
+      setIsModalOpen(false);
+      navigate("/waiting-verify");
     } catch (err) {
-      if (err.response?.status === 422) {
-        setError(err.response.data.errors);
-      } else if (err.response?.status === 401) {
+      if (err.response?.status === 401) {
         setError({ general: err.response.data.message });
       } else {
-        setError({ general: "Something went wrong. Please try again." });
+        setError({ general: "Something went wrong" });
       }
     } finally {
       setLoading(false);
@@ -433,9 +430,13 @@ const Navbar = () => {
 
                 <div className="flex justify-between mb-4 text-sm">
                   <span></span>
-                  <a href="#" className="text-[#A8E900] hover:underline">
+                  <button
+                    onClick={() => alert("Please contact the admin")}
+                    href="#"
+                    className="text-[#A8E900] hover:underline"
+                  >
                     Forgot your password?
-                  </a>
+                  </button>
                 </div>
 
                 {/* Notd : Captcha Token */}
@@ -447,26 +448,21 @@ const Navbar = () => {
                 />
               </div> */}
 
-               
-
-                  {/* Notd : messags show  */}
+                {/* Notd : messags show  */}
                 {error.general && (
                   <div className="mb-3 text-sm text-red-500">
                     {error.general}
                   </div>
                 )}
 
-
-
-                 {/* Submit Button */}
+                {/* Submit Button */}
                 <button
-                  type="submit" disabled ={loading}
-                  className="w-full py-2 mt-2  font-medium bg-[#A8E900] text-black rounded-md  shadow-[0_0_20px_rgba(168,233,0,0.45)] hover:brightness-110 hover:shadow-[0_0_35px_rgba(168,233,0,0.85)] transition"
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-2 mt-2  font-medium bg-[#A8E900] text-black rounded-md  hover:brightness-110 transition"
                 >
-                   {loading ? "Processing..." : "Login"}
+                  {loading ? "Processing..." : "Login"}
                 </button>
-
-
 
                 {/* Noted:  Switch to Sign Up */}
                 <p className="text-center text-sm mt-4">

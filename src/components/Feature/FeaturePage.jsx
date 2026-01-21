@@ -28,7 +28,7 @@ const FeaturePage = () => {
   };
   return (
     <motion.div
-      className="relative mt-28" // ensure some space
+      className="relative mt-16" // ensure some space
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -37,7 +37,7 @@ const FeaturePage = () => {
       <div className="text-center text-white max-w-6xl mx-auto px-4">
         <motion.h1
           variants={item}
-          className="text-[#A8E900] text-3xl font-bold md:text-5xl"
+          className="text-[#A8E900] py-5 text-3xl font-bold md:text-5xl"
         >
           Features
         </motion.h1>
