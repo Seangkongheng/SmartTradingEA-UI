@@ -293,7 +293,7 @@ const Navbar = () => {
                     onChange={handleChange}
                     type="text"
                     placeholder="John"
-                    className={`w-full pl-3 h-10 rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full pl-3 h-10 text-white rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
                       error.first_name ? "border-red-500" : "border-gray-300"
                     }`}
                   />
@@ -313,7 +313,7 @@ const Navbar = () => {
                     value={form.last_name}
                     onChange={handleChange}
                     placeholder="Doe"
-                    className={`w-full pl-3 h-10 rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    className={`w-full text-white pl-3 h-10 rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
                       error.last_name ? "border-red-500" : "border-gray-300"
                     }`}
                   />
@@ -336,7 +336,7 @@ const Navbar = () => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="name@example.com"
-                  className={`w-full pl-3 h-10 rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                  className={`w-full pl-3 h-10 text-white  rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
                     error.email ? "border-red-500" : "border-gray-300"
                   }`}
                 />
@@ -356,7 +356,7 @@ const Navbar = () => {
                   value={form.password}
                   onChange={handleChange}
                   placeholder="Password"
-                  className={`w-full pl-3 h-10 rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                  className={`w-full pl-3 h-10 text-white rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
                     error.password ? "border-red-500" : "border-gray-300"
                   }`}
                 />
@@ -378,7 +378,7 @@ const Navbar = () => {
                   value={form.password_confirmation}
                   onChange={handleChange}
                   placeholder="Confirm Password"
-                  className={`w-full pl-3 h-10 rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                  className={`w-full pl-3 h-10 text-white rounded-lg border bg-black/20  focus:ring-2 focus:ring-blue-500 focus:outline-none ${
                     error.password ? "border-red-500" : "border-gray-300"
                   }`}
                 />
@@ -437,7 +437,7 @@ const Navbar = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="name@example.com"
-                    className="w-full pl-3 h-10 rounded-lg border bg-black/20 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-white pl-3 h-10 rounded-lg border bg-black/20 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -452,7 +452,7 @@ const Navbar = () => {
                     value={form.password}
                     onChange={handleChange}
                     placeholder="Password"
-                    className="w-full pl-3 h-10 rounded-lg border bg-black/20 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full pl-3 h-10 text-white rounded-lg border bg-black/20 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 

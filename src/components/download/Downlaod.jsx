@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaDownload, FaEye, FaFileAlt } from "react-icons/fa";
 
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const Download = () => {
+  const [attachment, setAttachment] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get(import.meta.env.VITE_API_URL + "attachment")
+      .then((res) => {
+        setAttachment(res.data.attachments || []);
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-400 text-lg animate-pulse">Loading files...</p>
+      </div>
+    );
+  }
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -60,154 +82,46 @@ const Download = () => {
           variants={item}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
         >
-          <div className="group bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(168,233,0,0.4)] transition">
-            <div className="relative h-40 bg-gray-800 flex items-center justify-center">
-              <FaFileAlt className="text-5xl text-[#A8E900]" />
-              <span className="absolute top-3 right-3 text-xs bg-[#A8E900] text-black px-3 py-1 rounded-full font-semibold">
-                ZIP
-              </span>
-            </div>
+          {attachment.map((item) => (
+            <div
+              key={item.id}
+              className="group bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(168,233,0,0.4)] transition"
+            >
+              <div className="relative h-40 bg-gray-800 flex items-center justify-center">
+                <FaFileAlt className="text-5xl text-[#A8E900]" />
+                <span className="absolute top-3 right-3 text-xs bg-[#A8E900] text-black px-3 py-1 rounded-full font-semibold">
+                  ZIP
+                </span>
+              </div>
 
-            {/* Content */}
-            <div className="p-5">
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A8E900] transition">
-                Trading EA Files
-              </h3>
+              {/* Content */}
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A8E900] transition">
+                  {item.title?? " Unknow Title"}
+                </h3>
 
-              <p className="text-sm text-gray-400 mb-4">
-                Professional EA package ready to download
-              </p>
+                <p className="text-sm text-gray-400 mb-4">{item.description?? "No Description"}</p>
 
-              {/* Footer */}
-              <div className="flex items-center justify-between">
-                {/* Views */}
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <FaEye />
-                  <span>1,240</span>
-                </div>
+                {/* Footer */}
+                <div className="flex items-center justify-between">
+                  {/* Views */}
+                  <div className="flex items-center gap-2 text-gray-400 text-sm">
+                    <FaEye />
+                    <span>{item.total_downloads ?? "0"}</span>
+                  </div>
 
-                <a
-                  href="#"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#A8E900] text-black rounded-lg text-sm font-semibold
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-4 py-2 bg-[#A8E900] text-black rounded-lg text-sm font-semibold
                 hover:bg-[#c6ff00] transition"
-                >
-                  <FaDownload />
-                  Download
-                </a>
+                  >
+                    <FaDownload />
+                    Download
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="group bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(168,233,0,0.4)] transition">
-            <div className="relative h-40 bg-gray-800 flex items-center justify-center">
-              <FaFileAlt className="text-5xl text-[#A8E900]" />
-              <span className="absolute top-3 right-3 text-xs bg-[#A8E900] text-black px-3 py-1 rounded-full font-semibold">
-                ZIP
-              </span>
-            </div>
-
-            {/* Content */}
-            <div className="p-5">
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A8E900] transition">
-                Trading EA Files
-              </h3>
-
-              <p className="text-sm text-gray-400 mb-4">
-                Professional EA package ready to download
-              </p>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between">
-                {/* Views */}
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <FaEye />
-                  <span>1,240</span>
-                </div>
-
-                <a
-                  href="#"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#A8E900] text-black rounded-lg text-sm font-semibold
-                hover:bg-[#c6ff00] transition"
-                >
-                  <FaDownload />
-                  Download
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="group bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(168,233,0,0.4)] transition">
-            <div className="relative h-40 bg-gray-800 flex items-center justify-center">
-              <FaFileAlt className="text-5xl text-[#A8E900]" />
-              <span className="absolute top-3 right-3 text-xs bg-[#A8E900] text-black px-3 py-1 rounded-full font-semibold">
-                ZIP
-              </span>
-            </div>
-
-            {/* Content */}
-            <div className="p-5">
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A8E900] transition">
-                Trading EA Files
-              </h3>
-
-              <p className="text-sm text-gray-400 mb-4">
-                Professional EA package ready to download
-              </p>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between">
-                {/* Views */}
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <FaEye />
-                  <span>1,240</span>
-                </div>
-
-                <a
-                  href="#"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#A8E900] text-black rounded-lg text-sm font-semibold
-                hover:bg-[#c6ff00] transition"
-                >
-                  <FaDownload />
-                  Download
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="group bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(168,233,0,0.4)] transition">
-            <div className="relative h-40 bg-gray-800 flex items-center justify-center">
-              <FaFileAlt className="text-5xl text-[#A8E900]" />
-              <span className="absolute top-3 right-3 text-xs bg-[#A8E900] text-black px-3 py-1 rounded-full font-semibold">
-                ZIP
-              </span>
-            </div>
-
-            {/* Content */}
-            <div className="p-5">
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A8E900] transition">
-                Trading EA Files
-              </h3>
-
-              <p className="text-sm text-gray-400 mb-4">
-                Professional EA package ready to download
-              </p>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between">
-                {/* Views */}
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <FaEye />
-                  <span>1,240</span>
-                </div>
-
-                <a
-                  href="#"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#A8E900] text-black rounded-lg text-sm font-semibold
-                hover:bg-[#c6ff00] transition"
-                >
-                  <FaDownload />
-                  Download
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </motion.div>
       </div>
     </motion.div>
