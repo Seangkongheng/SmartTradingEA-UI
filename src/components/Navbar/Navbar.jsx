@@ -58,7 +58,7 @@ const Navbar = () => {
           email: form.email,
           password: form.password,
           password_confirmation: form.password_confirmation,
-          // captcha: captchaToken,
+          captcha: captchaToken,
         },
         {
           headers: {
@@ -79,7 +79,7 @@ const Navbar = () => {
       });
 
       setIsSignUp(false);
-      // setCaptchaToken(""); // reset captcha token if needed
+      setCaptchaToken(""); // reset captcha token if needed
     } catch (err) {
       console.error("REGISTER ERROR:", err.response || err);
 
@@ -100,11 +100,11 @@ const Navbar = () => {
     setError({});
     setSuccess("");
 
-    // if (!turnstileToken) {
-    //   setError({ general: "Please complete the captcha first." });
-    //   setLoading(false);
-    //   return;
-    // }
+    if (!turnstileToken) {
+      setError({ general: "Please complete the captcha first." });
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await axios.post(
@@ -112,14 +112,14 @@ const Navbar = () => {
         {
           email: form.email,
           password: form.password,
-          // captcha: turnstileToken,
+          captcha: turnstileToken,
         },
-        // {
-        //   headers: {
-        //     Accept: "application/json",
-        //     "Content-Type": "application/json",
-        //   },
-        // },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        },
       );
 
       setSuccess(res.data.message);
@@ -390,13 +390,13 @@ const Navbar = () => {
               </div>
 
               {/* Notd : Captcha Token */}
-              {/* <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <Turnstile
                   siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                   onSuccess={(token) => setCaptchaToken(token)}
                   onExpire={() => setCaptchaToken("")}
                 />
-              </div> */}
+              </div>
 
               {/* Submit Button */}
               <button
@@ -468,13 +468,13 @@ const Navbar = () => {
                 </div>
 
                 {/* Notd : Captcha Token */}
-                {/* <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center">
                   <Turnstile
                     siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                     onSuccess={(token) => setCaptchaToken(token)}
                     onExpire={() => setCaptchaToken("")}
                   />
-                </div> */}
+                </div>
 
                 {/* Notd : messags show  */}
                 {error.general && (
