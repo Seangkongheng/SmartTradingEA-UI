@@ -117,7 +117,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="text-white mt-5 px-4">
+    <div className="text-white mt-5 px-4 mx-auto max-w-[1512px] ">
       {/* Tabs */}
       <div className="relative mb-6 border-b border-neutral-800">
         <div className="flex space-x-2 overflow-x-auto overflow-y-hidden scrollbar-hide">

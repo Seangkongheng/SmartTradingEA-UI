@@ -73,8 +73,8 @@ const DashboardNavbar = ({ onLogout }) => {
   };
 
   return (
-    <nav className="border-b mx-auto max-w-[1512px]  border-[hsl(59,100%,50%)] bg-gradient-to-br from-[#070C0F] via-[#0A1219] to-[#070C0F] px-6 py-4">
-      <div className="flex items-center justify-between">
+    <nav className="border-b  border-[hsl(59,100%,50%)] bg-gradient-to-br from-[#070C0F] via-[#0A1219] to-[#070C0F] px-6 py-4">
+      <div className="flex items-center  mx-auto max-w-[1512px] justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <motion.img
@@ -96,7 +96,7 @@ const DashboardNavbar = ({ onLogout }) => {
             className="flex items-center transition-all duration-200 hover:shadow-lg"
           >
             <div className="relative">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm shadow-md">
+              <div className="w-8 h-8 rounded-full bg- flex items-center justify-center text-white font-semibold text-sm shadow-md">
                 {user.first_name ? user.first_name.charAt(0).toUpperCase() : "U"}
               </div>
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-800"></div>
@@ -112,7 +112,7 @@ const DashboardNavbar = ({ onLogout }) => {
               {/* User Info */}
               <div className="p-4 bg-gradient-to-br from-gray-800 to-gray-900 border-b border-gray-700">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="w-10 h-10 rounded-full bg-[hsl(59,100%,50%)] flex items-center justify-center text-white font-bold text-lg shadow-lg">
                     {user.first_name ? user.first_name.charAt(0).toUpperCase() : "U"}
                   </div>
                   <div className="flex-1 min-w-0">
