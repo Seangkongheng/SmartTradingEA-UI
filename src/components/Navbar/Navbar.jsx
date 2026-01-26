@@ -112,7 +112,7 @@ const Navbar = () => {
         {
           email: form.email,
           password: form.password,
-          captcha: turnstileToken,
+          captcha: captchaToken,
         },
         {
           headers: {
