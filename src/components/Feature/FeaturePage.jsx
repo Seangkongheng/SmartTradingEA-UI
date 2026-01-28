@@ -76,7 +76,7 @@ const FeaturePage = () => {
   );
 
   return (
-    <div className=" text-white p-10">
+    <div className=" text-white  ">
       {/* Hero Section */}
 
       <div className=" mt-16 text-white max-w-6xl mx-auto px-5">

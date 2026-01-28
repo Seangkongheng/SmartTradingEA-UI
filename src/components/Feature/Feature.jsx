@@ -2,6 +2,64 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import FeatureModal from "../modal/FeatureModal";
 import { title } from "framer-motion/client";
+import { FaLayerGroup, FaCog } from "react-icons/fa";
+
+const AdaptiveGridIcon = () => (
+  <svg width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#BAFD00" />
+        <stop offset="1" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Pulsing center circle */}
+    <circle
+      cx="70"
+      cy="70"
+      r="18"
+      fill="none"
+      stroke="#A8E900"
+      strokeWidth="4"
+      opacity="0.35"
+    >
+      <animate
+        attributeName="r"
+        values="14;22;14"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.45;0.1;0.45"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    {/* Grid blocks */}
+    {[...Array(3)].map((_, row) =>
+      [...Array(3)].map((_, col) => (
+        <rect
+          key={`${row}-${col}`}
+          x={50 + col * 20}
+          y={50 + row * 20}
+          width="20"
+          height="20"
+          rx="3"
+          fill="url(#g1)"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.3;1;0.3"
+            dur={`${1 + (row + col) * 0.2}s`}
+            repeatCount="indefinite"
+          />
+        </rect>
+      )),
+    )}
+  </svg>
+);
 
 const container = {
   hidden: { opacity: 0 },
@@ -333,6 +391,562 @@ const Feature = () => {
     </svg>
   );
 
+const SmartLogicIcon = () => (
+  <svg width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#BAFD00" />
+        <stop offset="1" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Pulsing center circle */}
+    <circle
+      cx="70"
+      cy="70"
+      r="18"
+      fill="none"
+      stroke="#A8E900"
+      strokeWidth="4"
+      opacity="0.35"
+    >
+      <animate
+        attributeName="r"
+        values="14;22;14"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.45;0.1;0.45"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    {/* Brain nodes */}
+    {[50, 70, 90].map((cx, i) =>
+      [50, 70, 90].map((cy, j) => (
+        <circle
+          key={`${i}-${j}`}
+          cx={cx}
+          cy={cy}
+          r="5"
+          fill="url(#g1)"
+          opacity="0.6"
+        >
+          <animate
+            attributeName="r"
+            values="3;6;3"
+            dur={`${1 + (i + j) * 0.3}s`}
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="opacity"
+            values="0.3;1;0.3"
+            dur={`${1 + (i + j) * 0.3}s`}
+            repeatCount="indefinite"
+          />
+        </circle>
+      ))
+    )}
+
+    {/* Connections */}
+    <line x1="50" y1="50" x2="70" y2="50" stroke="url(#g1)" strokeWidth="2">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="70" y1="50" x2="90" y2="50" stroke="url(#g1)" strokeWidth="2">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite" />
+    </line>
+    <line x1="70" y1="50" x2="70" y2="70" stroke="url(#g1)" strokeWidth="2">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite" />
+    </line>
+  </svg>
+);
+const SmartLockIcon = () => (
+  <svg width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#BAFD00" />
+        <stop offset="1" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Outer circle */}
+    <circle
+      cx="70"
+      cy="70"
+      r="42"
+      fill="none"
+      stroke="#94a3b8"
+      strokeWidth="6"
+    />
+
+    {/* Inner circle */}
+    <circle
+      cx="70"
+      cy="70"
+      r="26"
+      fill="none"
+      stroke="#94a3b8"
+      strokeWidth="6"
+    />
+
+    {/* Pulsing center */}
+    <circle
+      cx="70"
+      cy="70"
+      r="10"
+      fill="url(#g1)"
+      opacity="0.9"
+    >
+      <animate
+        attributeName="r"
+        values="8;12;8"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.3;1;0.3"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    {/* Lock shackle */}
+    <path
+      d="M50 70 V50a20 20 0 0 1 40 0v20"
+      fill="none"
+      stroke="url(#g1)"
+      strokeWidth="6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <animate
+        attributeName="stroke-dasharray"
+        values="0,80;80,0;0,80"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </path>
+  </svg>
+);
+
+const ControlledLotGrowthIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="140"
+    height="140"
+    viewBox="0 0 140 140"
+    className="shrink-0"
+  >
+    {/* Base gray structure */}
+    <g
+      fill="none"
+      stroke="#64748b"
+      strokeWidth="6"
+      strokeLinejoin="round"
+    >
+      <rect x="34" y="86" width="72" height="18" rx="9" />
+      <rect x="38" y="64" width="64" height="18" rx="9" />
+      <rect x="42" y="42" width="56" height="18" rx="9" />
+    </g>
+
+    {/* Animated controlled growth overlay */}
+    <g opacity="0.55">
+      <rect
+        x="34"
+        y="86"
+        width="72"
+        height="18"
+        rx="9"
+        fill="none"
+        stroke="#BAFD00"
+        strokeWidth="6"
+      />
+      <rect
+        x="38"
+        y="64"
+        width="64"
+        height="18"
+        rx="9"
+        fill="none"
+        stroke="#BAFD00"
+        strokeWidth="6"
+      />
+      <rect
+        x="42"
+        y="42"
+        width="56"
+        height="18"
+        rx="9"
+        fill="none"
+        stroke="#A8E900"
+        strokeWidth="6"
+      />
+
+      {/* Vertical controlled movement */}
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 18; 0 -10; 0 18"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+
+      <animate
+        attributeName="opacity"
+        values="0.15;0.65;0.15"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </g>
+
+    {/* Growth cap indicator */}
+    <text
+      x="92"
+      y="34"
+      fontFamily="system-ui, Segoe UI, Roboto, Arial"
+      fontSize="20"
+      fill="#BAFD00"
+      fontWeight="700"
+    >
+      2x
+      <animate
+        attributeName="opacity"
+        values="0.3;1;0.3"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </text>
+  </svg>
+);
+const AdvancedSafetyFiltersIcon = () => (
+  <svg width="120" height="120" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#BAFD00" />
+        <stop offset="1" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Shield outline */}
+    <path
+      d="M70 20 L110 36 V68c0 28-18 44-40 56C48 112 30 96 30 68V36Z"
+      fill="none"
+      stroke="#64748b"
+      strokeWidth="6"
+      strokeLinejoin="round"
+    />
+
+    {/* Animated shield glow */}
+    <path
+      d="M70 20 L110 36 V68c0 28-18 44-40 56C48 112 30 96 30 68V36Z"
+      fill="none"
+      stroke="url(#g1)"
+      strokeWidth="6"
+      opacity="0.4"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.2;0.7;0.2"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    {/* Filter lines */}
+    {[52, 66, 80].map((y, i) => (
+      <line
+        key={i}
+        x1="48"
+        y1={y}
+        x2="92"
+        y2={y}
+        stroke="url(#g1)"
+        strokeWidth="5"
+        strokeLinecap="round"
+        opacity="0.6"
+      >
+        <animate
+          attributeName="opacity"
+          values="0.2;1;0.2"
+          dur={`${1.2 + i * 0.3}s`}
+          repeatCount="indefinite"
+        />
+      </line>
+    ))}
+
+    {/* Pulsing core */}
+    <circle cx="70" cy="70" r="8" fill="#A8E900">
+      <animate
+        attributeName="r"
+        values="6;10;6"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.4;1;0.4"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </svg>
+);
+
+const LiveTradingDashboardIcon = () => (
+  <svg width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="dashGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#BAFD00" />
+        <stop offset="100%" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Dashboard frame */}
+    <rect
+      x="26"
+      y="34"
+      width="88"
+      height="64"
+      rx="12"
+      fill="none"
+      stroke="#64748b"
+      strokeWidth="6"
+    />
+
+    {/* Animated chart bars */}
+    {[44, 60, 76].map((x, i) => (
+      <rect
+        key={i}
+        x={x}
+        y="58"
+        width="10"
+        height="28"
+        rx="3"
+        fill="url(#dashGrad)"
+        opacity="0.7"
+      >
+        <animate
+          attributeName="height"
+          values="16;36;16"
+          dur={`${1.2 + i * 0.3}s`}
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="y"
+          values="70;50;70"
+          dur={`${1.2 + i * 0.3}s`}
+          repeatCount="indefinite"
+        />
+      </rect>
+    ))}
+
+    {/* Live pulse dot */}
+    <circle cx="98" cy="44" r="6" fill="#A8E900">
+      <animate
+        attributeName="r"
+        values="4;8;4"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.4;1;0.4"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    {/* Data line */}
+    <polyline
+      points="38,80 54,70 70,76 86,62 102,68"
+      fill="none"
+      stroke="url(#dashGrad)"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      opacity="0.6"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.2;1;0.2"
+        dur="1.6s"
+        repeatCount="indefinite"
+      />
+    </polyline>
+  </svg>
+);
+const BuySellIndependenceIcon = () => (
+  <svg width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="bsGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#BAFD00" />
+        <stop offset="100%" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Divider */}
+    <line
+      x1="70"
+      y1="30"
+      x2="70"
+      y2="110"
+      stroke="#64748b"
+      strokeWidth="4"
+      strokeDasharray="6 6"
+      opacity="0.4"
+    />
+
+    {/* BUY side */}
+    <circle cx="46" cy="70" r="16" fill="none" stroke="url(#bsGrad)" strokeWidth="5">
+      <animate
+        attributeName="r"
+        values="14;18;14"
+        dur="1.4s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <path
+      d="M46 52 V30 M46 30 L38 38 M46 30 L54 38"
+      fill="none"
+      stroke="#A8E900"
+      strokeWidth="5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.3;1;0.3"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    {/* SELL side */}
+    <circle cx="94" cy="70" r="16" fill="none" stroke="url(#bsGrad)" strokeWidth="5">
+      <animate
+        attributeName="r"
+        values="14;18;14"
+        dur="1.4s"
+        repeatCount="indefinite"
+        begin="0.4s"
+      />
+    </circle>
+
+    <path
+      d="M94 88 V110 M94 110 L86 102 M94 110 L102 102"
+      fill="none"
+      stroke="#A8E900"
+      strokeWidth="5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.3;1;0.3"
+        dur="1.2s"
+        repeatCount="indefinite"
+        begin="0.4s"
+      />
+    </path>
+
+    {/* Independent logic pulses */}
+    <circle cx="46" cy="70" r="4" fill="#BAFD00">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" />
+    </circle>
+
+    <circle cx="94" cy="70" r="4" fill="#BAFD00">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" />
+    </circle>
+  </svg>
+);
+
+const SessionAwareTradingIcon = () => (
+  <svg width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+      <linearGradient id="sessionGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#BAFD00" />
+        <stop offset="100%" stopColor="#A8E900" />
+      </linearGradient>
+    </defs>
+
+    {/* Clock base */}
+    <circle
+      cx="70"
+      cy="70"
+      r="40"
+      fill="none"
+      stroke="#64748b"
+      strokeWidth="6"
+      opacity="0.35"
+    />
+
+    {/* Session arcs */}
+    {[0, 120, 240].map((deg, i) => (
+      <path
+        key={i}
+        d="M70 30 A40 40 0 0 1 110 70"
+        fill="none"
+        stroke="url(#sessionGrad)"
+        strokeWidth="6"
+        strokeLinecap="round"
+        opacity="0.6"
+        transform={`rotate(${deg} 70 70)`}
+      >
+        <animate
+          attributeName="opacity"
+          values="0.2;1;0.2"
+          dur={`${1.4 + i * 0.3}s`}
+          repeatCount="indefinite"
+        />
+      </path>
+    ))}
+
+    {/* Clock hand */}
+    <line
+      x1="70"
+      y1="70"
+      x2="70"
+      y2="44"
+      stroke="#A8E900"
+      strokeWidth="5"
+      strokeLinecap="round"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 70 70"
+        to="360 70 70"
+        dur="6s"
+        repeatCount="indefinite"
+      />
+    </line>
+
+    {/* Active session pulse */}
+    <circle cx="70" cy="70" r="8" fill="#BAFD00">
+      <animate
+        attributeName="r"
+        values="6;10;6"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.4;1;0.4"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </svg>
+);
+
+
+
+
   const [modalData, setModalData] = useState(null);
 
   return (
@@ -366,7 +980,10 @@ const Feature = () => {
         {/* Risk Control */}
         <Card big>
           <button>
-            <div className="flex justify-center mb-8">{RiskIcon}</div>
+            <div className="flex justify-center mb-8">
+              {" "}
+              <AdaptiveGridIcon />
+            </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
               Adaptive Grid Engine
             </h3>
@@ -382,51 +999,7 @@ const Feature = () => {
         <Card big>
           <button>
             <div className="flex justify-center mb-8">
-              {/* SVG */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="140"
-                height="140"
-                viewBox="0 0 140 140"
-              >
-                <g transform="translate(70 70)">
-                  <g>
-                    <circle
-                      r="28"
-                      fill="none"
-                      stroke="#BAFD00"
-                      stroke-width="6"
-                    ></circle>
-                    <circle
-                      r="10"
-                      fill="none"
-                      stroke="#A8E900"
-                      stroke-width="6"
-                    ></circle>
-                    <g fill="#BAFD00">
-                      <rect x="-3" y="-44" width="6" height="12" rx="2"></rect>
-                      <rect x="-3" y="32" width="6" height="12" rx="2"></rect>
-                      <rect x="-44" y="-3" width="12" height="6" rx="2"></rect>
-                      <rect x="32" y="-3" width="12" height="6" rx="2"></rect>
-                    </g>
-                    <animateTransform
-                      attributeName="transform"
-                      type="rotate"
-                      from="0"
-                      to="360"
-                      dur="2.2s"
-                      repeatCount="indefinite"
-                    ></animateTransform>
-                  </g>
-                </g>
-                <path
-                  d="M18 110 H122"
-                  fill="none"
-                  stroke="#94a3b8"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                ></path>
-              </svg>
+              <SmartLogicIcon />
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
               Smart Take Profit
@@ -442,37 +1015,7 @@ const Feature = () => {
         <Card big>
           <button>
             <div className="flex justify-center mb-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="140"
-                height="140"
-                viewBox="0 0 140 140"
-              >
-                <circle
-                  cx="70"
-                  cy="70"
-                  r="42"
-                  fill="none"
-                  stroke="#94a3b8"
-                  stroke-width="6"
-                ></circle>
-                <circle
-                  cx="70"
-                  cy="70"
-                  r="26"
-                  fill="none"
-                  stroke="#94a3b8"
-                  stroke-width="6"
-                ></circle>
-                <circle cx="70" cy="70" r="10" fill="#A8E900" opacity="0.9">
-                  <animate
-                    attributeName="r"
-                    values="8;12;8"
-                    dur="1.2s"
-                    repeatCount="indefinite"
-                  ></animate>
-                </circle>
-              </svg>
+            <SmartLockIcon/>
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
               Smart Lock Protection
@@ -488,92 +1031,7 @@ const Feature = () => {
         <Card big>
           <button>
             <div className="flex justify-center mb-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="140"
-                height="140"
-                viewBox="0 0 140 140"
-                class="shrink-0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="140"
-                  height="140"
-                  viewBox="0 0 140 140"
-                >
-                  <g
-                    fill="none"
-                    stroke="#64748b"
-                    stroke-width="6"
-                    stroke-linejoin="round"
-                  >
-                    <rect x="34" y="86" width="72" height="18" rx="9"></rect>
-                    <rect x="38" y="64" width="64" height="18" rx="9"></rect>
-                    <rect x="42" y="42" width="56" height="18" rx="9"></rect>
-                  </g>
-                  <g opacity="0.55">
-                    <rect
-                      x="34"
-                      y="86"
-                      width="72"
-                      height="18"
-                      rx="9"
-                      fill="none"
-                      stroke="#BAFD00"
-                      stroke-width="6"
-                    ></rect>
-                    <rect
-                      x="38"
-                      y="64"
-                      width="64"
-                      height="18"
-                      rx="9"
-                      fill="none"
-                      stroke="#BAFD00"
-                      stroke-width="6"
-                    ></rect>
-                    <rect
-                      x="42"
-                      y="42"
-                      width="56"
-                      height="18"
-                      rx="9"
-                      fill="none"
-                      stroke="#A8E900"
-                      stroke-width="6"
-                    ></rect>
-                    <animateTransform
-                      attributeName="transform"
-                      type="translate"
-                      values="0 18; 0 -10; 0 18"
-                      dur="1.6s"
-                      repeatCount="indefinite"
-                    ></animateTransform>
-                    <animate
-                      attributeName="opacity"
-                      values="0.15;0.65;0.15"
-                      dur="1.6s"
-                      repeatCount="indefinite"
-                    ></animate>
-                  </g>
-                  <text
-                    x="92"
-                    y="34"
-                    font-family="system-ui,Segoe UI,Roboto,Arial"
-                    font-size="20"
-                    fill="#BAFD00"
-                    font-weight="700"
-                  >
-                    2x
-                    <animate
-                      attributeName="opacity"
-                      values="0.3;1;0.3"
-                      dur="1.6s"
-                      repeatCount="indefinite"
-                    ></animate>
-                  </text>
-                </svg>
-              </svg>
+              <ControlledLotGrowthIcon/>
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
               Controlled Lot Growth
@@ -593,7 +1051,7 @@ const Feature = () => {
       >
         {/* Realtime */}
         <Card>
-          <div className="flex justify-center mb-4">{RealtimeIcon}</div>
+          <div className="flex justify-center mb-4"><AdvancedSafetyFiltersIcon/></div>
           <h4 className="text-lg font-semibold text-white">
             Advanced Safety Filters
           </h4>
@@ -606,7 +1064,7 @@ const Feature = () => {
         {/* High Frequency */}
         <Card className="p-6 bg-slate-900/70 border border-slate-800 rounded-2xl">
           {/* ICON */}
-          <div className="flex justify-center mb-5">{FrequencyIcon}</div>
+          <div className="flex justify-center mb-5"><SessionAwareTradingIcon/></div>
 
           {/* TEXT */}
           <h4 className="text-lg font-semibold text-white text-center">
@@ -622,7 +1080,7 @@ const Feature = () => {
         {/* Dual Hedged */}
         <Card className="p-6 bg-slate-900/70 border border-slate-800 rounded-2xl">
           {/* ICON */}
-          <div className="flex justify-center mb-5">{HedgedIcon}</div>
+          <div className="flex justify-center mb-5"><BuySellIndependenceIcon/></div>
 
           {/* TEXT */}
           <h4 className="text-lg font-semibold text-white text-center">
@@ -639,86 +1097,7 @@ const Feature = () => {
         <Card className="p-6 bg-slate-900/70 border border-slate-800 rounded-2xl">
           {/* ICON */}
           <div className="flex justify-center mb-5">
-            <svg
-              width="140"
-              height="140"
-              viewBox="0 0 140 140"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="riskGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#BAFD00" />
-                  <stop offset="100%" stopColor="#A8E900" />
-                </linearGradient>
-
-                <style>
-                  {`
-            .fillArc {
-              stroke-dasharray: 160;
-              animation: riskFill 3s ease-in-out infinite;
-            }
-            .needle {
-              transform-origin: 70px 84px;
-              animation: needleMove 3s ease-in-out infinite;
-            }
-            .capital {
-              animation: capPulse 1.6s ease-in-out infinite;
-            }
-            @keyframes riskFill {
-              0% { stroke-dashoffset: 140; }
-              50% { stroke-dashoffset: 30; }
-              100% { stroke-dashoffset: 140; }
-            }
-            @keyframes needleMove {
-              0%,100% { transform: rotate(-55deg); }
-              50% { transform: rotate(30deg); }
-            }
-            @keyframes capPulse {
-              0%,100% { opacity: .6; }
-              50% { opacity: 1; }
-            }
-          `}
-                </style>
-              </defs>
-
-              <path
-                d="M30 90 A40 40 0 0 1 110 90"
-                fill="none"
-                stroke="#64748b"
-                strokeWidth="6"
-                strokeLinecap="round"
-                opacity="0.25"
-              />
-
-              <path
-                d="M30 90 A40 40 0 0 1 110 90"
-                fill="none"
-                stroke="url(#riskGrad)"
-                strokeWidth="6"
-                strokeLinecap="round"
-                className="fillArc"
-              />
-
-              <circle
-                cx="70"
-                cy="90"
-                r="10"
-                fill="#0b0f14"
-                stroke="#BAFD00"
-                strokeWidth="3"
-              />
-
-              <line
-                x1="70"
-                y1="90"
-                x2="70"
-                y2="56"
-                stroke="#BAFD00"
-                strokeWidth="4"
-                strokeLinecap="round"
-                className="needle"
-              />
-            </svg>
+           <LiveTradingDashboardIcon/>
           </div>
 
           {/* TEXT */}

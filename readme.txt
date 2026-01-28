@@ -45,7 +45,8 @@ Need update in EA Website
 	- Add Video
 	- check reposnive with plan
 	- Change button sigin in dropdown to to gold color
-	- when click view prive button
+	- when click view price button got to plan                           = Already
+	
 
 
 

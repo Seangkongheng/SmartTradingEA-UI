@@ -163,23 +163,22 @@ const Home = () => {
     >
       <AnimatedBackground />
 
-      <div className="text-center mt-16 max-w-6xl mx-auto">
+      <div className="text-center mt-16 max-w-5xl mx-auto">
         {/* Title */}
         <motion.div variants={item} className="home-title">
           <h1 className="mb-6 bg-gradient-to-r from-[#FFD700] via-[#BAFD00] to-[#9EFF00] bg-clip-text text-transparent text-4xl sm:text-7xl font-bold text-center">
-            Engineered for Gold Volatility
+           Professional Expert Advisor built for Gold (XAUUSD)
           </h1>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-semibold text-white mb-8 max-w-5xl  sm:max-w-8xl mx-auto">
-            Trade XAUUSD Without Choosing a Direction
+          <h1 className="text-3xl sm:text-5xl lg:text-4xl font-semibold text-white mb-8 max-w-5xl  sm:max-w-8xl mx-auto">
+           Built-In Safety & Risk Filters, Intelligent Adaptive Entry System (Volatility-Aware)
           </h1>
         </motion.div>
 
         {/* Description */}
         <motion.div variants={item} className="home-description mb-10">
           <p className="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto text-gray-500 leading-relaxed">
-            Fully automated dual-hedged trading system. Set it up once, let
-            SuperTradingEA handle the rest.
+            Our EA Designed to handle volatility with intelligent risk control, adaptive trade spacing, and real-time execution.
           </p>
         </motion.div>
 
@@ -200,11 +199,12 @@ const Home = () => {
           </button>
           <button
             onClick={() => {
-              setIsModalOpen(true);
-              setIsMenuOpen(false);
+              const planSection = document.getElementById("plan");
+              if (planSection) {
+                planSection.scrollIntoView({ behavior: "smooth" });
+              }
             }}
-            href="#"
-            className="group flex justify-center items-center w-full sm:w-auto px-6 py-2 bg-[hsl(59,100%,50%)] text-black rounded-md transition hover:brightness-110 "
+            className="group flex justify-center items-center w-full sm:w-auto px-6 py-2 bg-[hsl(59,100%,50%)] text-black rounded-md transition hover:brightness-110"
           >
             View Pricing
             <svg
@@ -223,7 +223,9 @@ const Home = () => {
           </button>
         </motion.div>
 
-        {/* Modal show Login and Sign Up */}
+       
+      </div>
+       {/* Modal show Login and Sign Up */}
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <div className="modal-content w-full">
             {isSignUp ? (
@@ -461,7 +463,6 @@ const Home = () => {
             )}
           </div>
         </Modal>
-      </div>
     </motion.div>
   );
 };
