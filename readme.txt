@@ -43,7 +43,11 @@ Need update in EA Website
 	- On product Detail when click order alert login
 	- Login in home have have problem
 	- Add Video
-	
+	- check reposnive with plan
+	- Change button sigin in dropdown to to gold color
+	- when click view prive button
+
+
 
 
 *Need update in EA Panel

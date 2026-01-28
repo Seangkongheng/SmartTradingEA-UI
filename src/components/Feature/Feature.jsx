@@ -333,7 +333,6 @@ const Feature = () => {
     </svg>
   );
 
- 
   const [modalData, setModalData] = useState(null);
 
   return (
@@ -366,39 +365,22 @@ const Feature = () => {
       >
         {/* Risk Control */}
         <Card big>
-          <button
-            onClick={() =>
-              setModalData({
-                title: "Risk Control",
-                description:
-                  "Built-in protection with free margin checks, spread filtering, volatility pause, equity limits, daily profit caps, and drawdown safeguards designed specifically for Gold trading.",
-              })
-            }
-            href=""
-          >
+          <button>
             <div className="flex justify-center mb-8">{RiskIcon}</div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
-              Risk Control
+              Adaptive Grid Engine
             </h3>
 
             <p className="text-gray-400 text-center line-clamp-3">
-              Built-in protection with free margin checks, spread filtering, and
-              volatility pause. Optional equity limits and daily profit caps.
+              Auto-adjusts grid spacing based on market volatility to avoid
+              over-trading during strong Gold moves.
             </p>
           </button>
         </Card>
 
         {/* Smart Pip */}
         <Card big>
-          <button
-            onClick={() =>
-              setModalData({
-                title: " Pip Engine",
-                description:
-                  " Dynamically adjusts trade spacing using ATR and Bollinger Bands.",
-              })
-            }
-          >
+          <button>
             <div className="flex justify-center mb-8">
               {/* SVG */}
               <svg
@@ -447,25 +429,18 @@ const Feature = () => {
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
-              Pip Engine
+              Smart Take Profit
             </h3>
             <p className="text-gray-400 line-clamp-4 text-center">
-              Dynamically adjusts trade spacing using ATR and Bollinger Bands.
+              Dynamic take-profit logic adapts to volatility for balanced exits
+              instead of fixed, risky targets.
             </p>
           </button>
         </Card>
 
         {/* Basket TP */}
         <Card big>
-          <button
-            onClick={() =>
-              setModalData({
-                title: "Take Profit",
-                description:
-                  " Smart basket exits with ATR smoothing for optimal timing.",
-              })
-            }
-          >
+          <button>
             <div className="flex justify-center mb-8">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -500,25 +475,18 @@ const Feature = () => {
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
-              Take Profit
+              Smart Lock Protection
             </h3>
             <p className="text-gray-400 text-center">
-              Smart basket exits with ATR smoothing for optimal timing.
+              Locks profit and activates break-even once a basket reaches safe
+              profit levels.
             </p>
           </button>
         </Card>
 
         {/* Martingale */}
         <Card big>
-          <button
-            onClick={() =>
-              setModalData({
-                title: "Martingale",
-                description:
-                  " Adaptive lot scaling with safety layers.Intelligent recovery for Gold volatility. Strategic position sizing manages drawdowns not random averaging.",
-              })
-            }
-          >
+          <button>
             <div className="flex justify-center mb-8">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -608,12 +576,11 @@ const Feature = () => {
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-3">
-              Martingale
+              Controlled Lot Growth
             </h3>
             <p className="text-gray-400 text-center line-clamp-3">
-              Adaptive lot scaling with safety layers.Intelligent recovery for
-              Gold volatility. Strategic position sizing manages drawdowns — not
-              random averaging.
+              No unlimited martingale — lot size, trade count, and exposure are
+              strictly capped.
             </p>
           </button>
         </Card>
@@ -627,9 +594,12 @@ const Feature = () => {
         {/* Realtime */}
         <Card>
           <div className="flex justify-center mb-4">{RealtimeIcon}</div>
-          <h4 className="text-lg font-semibold text-white">Realtime</h4>
+          <h4 className="text-lg font-semibold text-white">
+            Advanced Safety Filters
+          </h4>
           <p className="text-sm text-gray-500 mt-2">
-            Live execution and position control on every tick.
+            Built-in margin, spread, and execution checks protect your account
+            from bad market conditions.
           </p>
         </Card>
 
@@ -640,11 +610,12 @@ const Feature = () => {
 
           {/* TEXT */}
           <h4 className="text-lg font-semibold text-white text-center">
-            High Frequency
+            Session-Aware Trading
           </h4>
 
           <p className="text-sm text-gray-400 mt-2 text-center leading-relaxed">
-            M1 timeframe optimized for fast-moving Gold sessions.
+            Optimized to trade Gold during cleaner, high-liquidity sessions for
+            more stable behavior.
           </p>
         </Card>
 
@@ -655,12 +626,12 @@ const Feature = () => {
 
           {/* TEXT */}
           <h4 className="text-lg font-semibold text-white text-center">
-            Dual-Hedged Engine
+            Buy & Sell Independence
           </h4>
 
           <p className="text-sm text-gray-400 mt-2 text-center leading-relaxed">
-            Buy &amp; sell positions every M1 candle.Opens both buy and sell
-            positions on every M1 candle for direction-neutral trading.
+            Separate Buy & Sell logic with unique magic numbers for better
+            control and tracking.
           </p>
         </Card>
 
@@ -752,12 +723,12 @@ const Feature = () => {
 
           {/* TEXT */}
           <h4 className="text-lg font-semibold text-white text-center">
-            Configurable Risk
+            Live Trading Dashboard
           </h4>
 
           <p className="text-sm text-gray-400 mt-2 text-center leading-relaxed">
-            Adjust risk parameters for any account size. Works from $50 / 5000
-            cents upward.
+            Real-time stats, ATR values, and trade data — full transparency, no
+            black-box trading.
           </p>
         </Card>
       </motion.div>
