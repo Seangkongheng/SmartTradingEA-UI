@@ -612,7 +612,7 @@ const ControlledLotGrowthIcon = () => (
       fill="#BAFD00"
       fontWeight="700"
     >
-      2x
+      1.2X
       <animate
         attributeName="opacity"
         values="0.3;1;0.3"

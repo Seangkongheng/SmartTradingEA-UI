@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaChartLine } from "react-icons/fa";
+import { FaLightbulb } from "react-icons/fa";
+import { FaShieldAlt } from "react-icons/fa";
 
 const FeaturePage = () => {
   const container = {
@@ -39,7 +42,7 @@ const FeaturePage = () => {
 
   const FrequencyIcon = (
     <svg
-      className="w-12 h-12 text-yellow-400"
+      className="w-12 h-12 text-[#A8E900]"
       fill="currentColor"
       viewBox="0 0 20 20"
     >
@@ -53,7 +56,7 @@ const FeaturePage = () => {
 
   const HedgedIcon = (
     <svg
-      className="w-12 h-12 text-yellow-400"
+      className="w-12 h-12 text-[#A8E900]"
       fill="currentColor"
       viewBox="0 0 20 20"
     >
@@ -76,10 +79,14 @@ const FeaturePage = () => {
   );
 
   return (
-    <div className=" text-white  ">
-      {/* Hero Section */}
-
-      <div className=" mt-16 text-white max-w-6xl mx-auto px-5">
+    <motion.div
+      className="py-10 text-white "
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <div className="mt-16 text-white max-w-6xl mx-auto px-5">
         {/* Noted : Title */}
 
         <motion.h1
@@ -110,7 +117,7 @@ const FeaturePage = () => {
           <div className="flex items-start justify-center  gap-4 mb-4">
             <div className="flex-shrink-0">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -144,13 +151,11 @@ const FeaturePage = () => {
             </li>
           </ul>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
-              ✓ ATR-based adaptive PipStep
-            </p>
-            <p className="text-yellow-400 font-semibold">
+            <p className="text-yellow-400 ">✓ ATR-based adaptive PipStep</p>
+            <p className="text-yellow-400">
               ✓ Dynamic expansion from 300% to 500% of base grid
             </p>
-            <p className="text-yellow-400 font-semibold">
+            <p className="text-yellow-400">
               ✓ Optimized for XAUUSD market behavior
             </p>
           </div>
@@ -160,17 +165,7 @@ const FeaturePage = () => {
         <Card>
           <div className="flex items-start justify-center items-center gap-4 mb-4">
             <div className="flex-shrink-0">
-              <svg
-                className="w-12 h-12 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <FaLightbulb className="text-[#A8E900] text-3xl mb-4 animate-pulse" />
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="text-xl font-bold  text-white mb-2">
@@ -200,15 +195,11 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
-              ✓ Adaptive Take Profit
-            </p>
-            <p className="text-yellow-400 font-semibold">
+            <p className="text-yellow-400">✓ Adaptive Take Profit</p>
+            <p className="text-yellow-400">
               ✓ Volatility-based TP range (50% – 300%)
             </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Balanced profit-taking logic
-            </p>
+            <p className="text-yellow-400">✓ Balanced profit-taking logic</p>
           </div>
         </Card>
 
@@ -217,7 +208,7 @@ const FeaturePage = () => {
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -258,15 +249,11 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
-              ✓ Profit lock activation
-            </p>
-            <p className="text-yellow-400 font-semibold">
+            <p className="text-yellow-400 ">✓ Profit lock activation</p>
+            <p className="text-yellow-400 ">
               ✓ Automatic break-even protection
             </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Designed for drawdown control
-            </p>
+            <p className="text-yellow-400">✓ Designed for drawdown control</p>
           </div>
         </Card>
 
@@ -275,14 +262,14 @@ const FeaturePage = () => {
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0 relative">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
               </svg>
               <span className="absolute -top-2 -right-2 bg-yellow-400 text-slate-900 text-xs font-bold px-2 py-1 rounded-full">
-                2x
+                1.2x
               </span>
             </div>
             <div className="flex-1 min-w-0">
@@ -315,22 +302,18 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
+            <p className="text-yellow-400">
               ✓ Layer multiplier: controlled (1.4x)
             </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Maximum trades capped
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Maximum lot size enforced
-            </p>
+            <p className="text-yellow-400">✓ Maximum trades capped</p>
+            <p className="text-yellow-400">✓ Maximum lot size enforced</p>
           </div>
         </Card>
 
         {/* Feature 5: Built-In Safety & Risk Filters */}
         <Card>
           <div className="flex items-start gap-4 mb-4">
-            <div className="flex-shrink-0">{RealtimeIcon}</div>
+            <FaShieldAlt className="text-[#A8E900] text-3xl" />
             <div className="flex-1 min-w-0">
               <h3 className="text-xl font-bold  text-whitemb-2">
                 Built-In Safety & Risk Filters
@@ -363,21 +346,17 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">✓ Free margin check</p>
-            <p className="text-yellow-400 font-semibold">✓ Spread protection</p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Loss prevention logic
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Broker execution aware
-            </p>
+            <p className="text-yellow-400 ">✓ Free margin check</p>
+            <p className="text-yellow-400 ">✓ Spread protection</p>
+            <p className="text-yellow-400 ">✓ Loss prevention logic</p>
+            <p className="text-yellow-400">✓ Broker execution aware</p>
           </div>
         </Card>
 
         {/* Feature 6: Session-Aware Trading */}
         <Card>
           <div className="flex items-start gap-4 mb-4">
-            <div className="flex-shrink-0">{FrequencyIcon}</div>
+            <div className="flex-shrink-0 text-[#A8E900]">{FrequencyIcon}</div>
             <div className="flex-1 min-w-0">
               <h3 className="text-xl font-bold  text-white mb-2">
                 Session-Aware Trading (Gold-Optimized)
@@ -408,22 +387,16 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
-              ✓ CBDR / Asia / Evening sessions
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Time-based execution control
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Optional session close logic
-            </p>
+            <p className="text-yellow-400">✓ CBDR / Asia / Evening sessions</p>
+            <p className="text-yellow-400">✓ Time-based execution control</p>
+            <p className="text-yellow-400">✓ Optional session close logic</p>
           </div>
         </Card>
 
         {/* Feature 7: Buy & Sell Logic */}
         <Card>
           <div className="flex items-start gap-4 mb-4">
-            <div className="flex-shrink-0">{HedgedIcon}</div>
+            <div className="flex-shrink-0 text-[#A8E900]">{HedgedIcon}</div>
             <div className="flex-1 min-w-0">
               <h3 className="text-xl font-bold  text-white mb-2">
                 Buy & Sell Logic with Independent Control
@@ -454,13 +427,9 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
-              ✓ Independent Buy/Sell logic
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Clean trade identification
-            </p>
-            <p className="text-yellow-400 font-semibold">
+            <p className="text-yellow-400">✓ Independent Buy/Sell logic</p>
+            <p className="text-yellow-400">✓ Clean trade identification</p>
+            <p className="text-yellow-400">
               ✓ Advanced portfolio setups possible
             </p>
           </div>
@@ -471,7 +440,7 @@ const FeaturePage = () => {
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -509,13 +478,9 @@ const FeaturePage = () => {
             </ul>
           </div>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">✓ Full transparency</p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ No "black box" behavior
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Trader-friendly interface
-            </p>
+            <p className="text-yellow-400">✓ Full transparency</p>
+            <p className="text-yellow-400">✓ No "black box" behavior</p>
+            <p className="text-yellow-400 ">✓ Trader-friendly interface</p>
           </div>
         </Card>
 
@@ -524,7 +489,7 @@ const FeaturePage = () => {
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -563,15 +528,9 @@ const FeaturePage = () => {
             </li>
           </ul>
           <div className="mt-auto pt-4 border-t border-slate-700 space-y-1 text-sm">
-            <p className="text-yellow-400 font-semibold">
-              ✓ Exness-friendly logic
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Gold-specific behavior
-            </p>
-            <p className="text-yellow-400 font-semibold">
-              ✓ Community-tested settings
-            </p>
+            <p className="text-yellow-400">✓ Exness-friendly logic</p>
+            <p className="text-yellow-400">✓ Gold-specific behavior</p>
+            <p className="text-yellow-400 ">✓ Community-tested settings</p>
           </div>
         </Card>
 
@@ -580,7 +539,7 @@ const FeaturePage = () => {
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -646,7 +605,7 @@ const FeaturePage = () => {
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
               <svg
-                className="w-12 h-12 text-yellow-400"
+                className="w-12 h-12 text-[#A8E900]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -676,7 +635,7 @@ const FeaturePage = () => {
           </div>
         </Card>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

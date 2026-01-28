@@ -36,6 +36,7 @@ import Modal from "./components/Login/Modal";
 import MarketplaceDetail from "./components/Dashboard/Marketplace/MarketplaceDetail";
 import Disclaimer from "./components/Disclaimer/Disclaimer";
 import TermsConditions from "./components/Disclaimer/TermsConditions";
+import VipMember from "./components/VipMember/VipMember";
 
 /* ---------- Layouts ---------- */
 
@@ -81,6 +82,7 @@ function App() {
                     <Home />
                     <Feature />
                     <Plan />
+                    <VipMember />
                     <Service />
                   </>
                 )

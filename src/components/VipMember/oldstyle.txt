@@ -1,0 +1,95 @@
+      {/* HOW TO JOIN */}
+      <div className="join-content text-white rounded-3xl h-full w-full border border-gray-700 hover:border-[#A8E900] p-8 md:p-12 cursor-pointer transition-all duration-300 hover:-translate-y-2">
+        <h1 className="text-center text-2xl font-semibold mb-6">How to Join</h1>
+
+        <ul className="space-y-6 text-sm text-gray-300">
+          <li className="flex gap-4">
+            <FaUserPlus className="text-[#A8E900] text-xl mt-1" />
+            <div>
+              <h4 className="font-semibold text-white">
+                Register with a Partner Broker
+              </h4>
+              <p>
+                Sign up with Exness, LiteFinance, or Investizo using our
+                referral codes (available on broker cards above).
+              </p>
+            </div>
+          </li>
+
+          <li className="flex gap-4">
+            <FaUserCheck className="text-[#A8E900] text-xl mt-1" />
+            <div>
+              <h4 className="font-semibold text-white">Create Your Account</h4>
+              <p>
+                Sign up on our platform and submit your membership application.
+              </p>
+            </div>
+          </li>
+
+          <li className="flex gap-4">
+            <FaClock className="text-[#A8E900] text-xl mt-1" />
+            <div>
+              <h4 className="font-semibold text-white">Wait for Approval</h4>
+              <p>
+                Our team will verify your registration and approve your
+                membership within 24–48 hours.
+              </p>
+            </div>
+          </li>
+
+          <li className="flex gap-4">
+            <FaGift className="text-[#A8E900] text-xl mt-1" />
+            <div>
+              <h4 className="font-semibold text-white">Claim Your Benefits</h4>
+              <p>
+                Access your VIP dashboard and unlock all exclusive benefits.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div className="flex gap-4 mt-8 justify-center">
+          <button className="px-6 py-2 rounded-xl bg-[#A8E900] text-black font-semibold hover:brightness-110 transition">
+            Get Started
+          </button>
+          <button className="px-6 py-2 rounded-xl border border-[#A8E900] text-[#A8E900] hover:bg-[#A8E900]/10 transition">
+            Sign Up
+          </button>
+        </div>
+      </div>
+
+
+      {/* MEMBER BENEFITS */}
+      <div className="member-content grid gap-4 grid-cols-2">
+        <div className="member-card rounded-3xl text-white h-full w-full border border-gray-700 p-6 hover:border-[#A8E900] transition">
+          <FaCrown className="text-[#A8E900] text-2xl mb-3" />
+          <h1 className="font-semibold mb-1">Exclusive Giveaways</h1>
+          <p className="text-sm text-gray-400">
+            Participate in monthly prize draws and competitions.
+          </p>
+        </div>
+
+        <div className="member-card rounded-3xl text-white h-full w-full border border-gray-700 p-6 hover:border-[#A8E900] transition">
+          <FaChartLine className="text-[#A8E900] text-2xl mb-3" />
+          <h1 className="font-semibold mb-1">Premium Trading Plan</h1>
+          <p className="text-sm text-gray-400">
+            Access VIP trading plans and strategies.
+          </p>
+        </div>
+
+        <div className="member-card rounded-3xl text-white h-full w-full border border-gray-700 p-6 hover:border-[#A8E900] transition">
+          <FaSignal className="text-[#A8E900] text-2xl mb-3" />
+          <h1 className="font-semibold mb-1">Premium Signals</h1>
+          <p className="text-sm text-gray-400">
+            Access VIP trading signals and market analysis.
+          </p>
+        </div>
+
+        <div className="member-card rounded-3xl text-white h-full w-full border border-gray-700 p-6 hover:border-[#A8E900] transition">
+          <FaUsers className="text-[#A8E900] text-2xl mb-3" />
+          <h1 className="font-semibold mb-1">Private Community</h1>
+          <p className="text-sm text-gray-400">
+            Join our exclusive Discord server for members only.
+          </p>
+        </div>
+      </div>
